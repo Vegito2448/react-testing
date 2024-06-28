@@ -15,7 +15,7 @@ test('checking wether vite and react text is available', () => {
 describe('App', () => {
   it('checking wether vite and react text is available', () => {
     render(<App />);
-    const text = screen.getByText("Vite + React");
+    const text = screen.getByRole('heading', { name: /vite \+ react/i })
     expect(text).toBeInTheDocument();
   });
 

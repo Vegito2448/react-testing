@@ -20,6 +20,18 @@ describe('Application', () => {
     const paragraphElement = screen.getByText(/All fields are required/i);
     expect(paragraphElement).toBeInTheDocument();
 
+    const paragraphElement2 = screen.getByText((content) => content.startsWith("All"));
+    expect(paragraphElement2).toBeInTheDocument();
+
+    const closeButton = screen.getByTitle("close");
+    expect(closeButton).toBeInTheDocument();
+
+    const imageElement = screen.getByAltText("A person with a laptop");
+    expect(imageElement).toBeInTheDocument();
+
+    const formElement = screen.getByTestId("application-form");
+    expect(formElement).toBeInTheDocument();
+
     const textInput = screen.getByRole('textbox', { name: /name/i });
     expect(textInput).toBeInTheDocument();
 
