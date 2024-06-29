@@ -1,8 +1,7 @@
-import { render, screen } from "@testing-library/react";
-import { Greet } from "../../../src/components";
+import { render, screen } from '@testing-library/react';
+import { Greet } from '../../../src/components';
 
 describe('Greet', () => {
-
   test('renders correctly', () => {
     render(<Greet />);
     const text = screen.getByText(/greet/i);
@@ -16,5 +15,4 @@ describe('Greet', () => {
       expect(text).toBeInTheDocument();
     });
   }); */
-
 });

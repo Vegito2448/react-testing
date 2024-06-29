@@ -1,4 +1,3 @@
-
 export const Application = () => {
   return (
     <>
@@ -19,6 +18,7 @@ export const Application = () => {
             name="name"
             placeholder="Full Name"
             value="Jesús Peña"
+            onChange={(e) => console.log(e.target.value)}
           />
         </div>
         <div>

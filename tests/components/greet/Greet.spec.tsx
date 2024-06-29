@@ -1,9 +1,8 @@
-import { render, screen } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
-import { Greet } from "../../../src/components";
+import { render, screen } from '@testing-library/react';
+import { describe, expect, it } from 'vitest';
+import { Greet } from '../../../src/components';
 
 describe('Greet', () => {
-
   it('renders correctly', () => {
     render(<Greet />);
     const text = screen.getByText(/greet/i);
@@ -16,7 +15,5 @@ describe('Greet', () => {
       const text = screen.getByText(/greet john/i);
       expect(text).toBeInTheDocument();
     });
-
   });
-
 });

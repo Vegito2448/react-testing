@@ -2,192 +2,433 @@ import { http, HttpResponse } from 'msw';
 
 export const handlers = [
   http.get('https://dummyjson.com/todos', () => {
-    return HttpResponse.json({
-      "todos": [
+    return HttpResponse.json(
+      {
+        todos: [
+          {
+            id: 1,
+            todo: 'Do something nice for someone you care about',
+            completed: false,
+            userId: 152,
+          },
+          {
+            id: 2,
+            todo: 'Memorize a poem',
+            completed: true,
+            userId: 13,
+          },
+          {
+            id: 3,
+            todo: 'Watch a classic movie',
+            completed: true,
+            userId: 68,
+          },
+          {
+            id: 4,
+            todo: 'Watch a documentary',
+            completed: false,
+            userId: 84,
+          },
+          {
+            id: 5,
+            todo: 'Invest in cryptocurrency',
+            completed: false,
+            userId: 163,
+          },
+          {
+            id: 6,
+            todo: 'Contribute code or a monetary donation to an open-source software project',
+            completed: false,
+            userId: 69,
+          },
+          {
+            id: 7,
+            todo: "Solve a Rubik's cube",
+            completed: true,
+            userId: 76,
+          },
+          {
+            id: 8,
+            todo: 'Bake pastries for yourself and neighbor',
+            completed: true,
+            userId: 198,
+          },
+          {
+            id: 9,
+            todo: 'Go see a Broadway production',
+            completed: false,
+            userId: 7,
+          },
+          {
+            id: 10,
+            todo: 'Write a thank you letter to an influential person in your life',
+            completed: true,
+            userId: 9,
+          },
+          {
+            id: 11,
+            todo: 'Invite some friends over for a game night',
+            completed: false,
+            userId: 104,
+          },
+          {
+            id: 12,
+            todo: 'Have a football scrimmage with some friends',
+            completed: false,
+            userId: 32,
+          },
+          {
+            id: 13,
+            todo: "Text a friend you haven't talked to in a long time",
+            completed: true,
+            userId: 2,
+          },
+          {
+            id: 14,
+            todo: 'Organize pantry',
+            completed: false,
+            userId: 46,
+          },
+          {
+            id: 15,
+            todo: 'Buy a new house decoration',
+            completed: true,
+            userId: 105,
+          },
+          {
+            id: 16,
+            todo: "Plan a vacation you've always wanted to take",
+            completed: true,
+            userId: 162,
+          },
+          {
+            id: 17,
+            todo: 'Clean out car',
+            completed: false,
+            userId: 71,
+          },
+          {
+            id: 18,
+            todo: 'Draw and color a Mandala',
+            completed: true,
+            userId: 6,
+          },
+          {
+            id: 19,
+            todo: 'Create a cookbook with favorite recipes',
+            completed: true,
+            userId: 53,
+          },
+          {
+            id: 20,
+            todo: 'Bake a pie with some friends',
+            completed: false,
+            userId: 162,
+          },
+          {
+            id: 21,
+            todo: 'Create a compost pile',
+            completed: false,
+            userId: 13,
+          },
+          {
+            id: 22,
+            todo: 'Take a hike at a local park',
+            completed: true,
+            userId: 37,
+          },
+          {
+            id: 23,
+            todo: 'Take a class at local community center that interests you',
+            completed: true,
+            userId: 65,
+          },
+          {
+            id: 24,
+            todo: 'Research a topic interested in',
+            completed: true,
+            userId: 130,
+          },
+          {
+            id: 25,
+            todo: 'Plan a trip to another country',
+            completed: false,
+            userId: 140,
+          },
+          {
+            id: 26,
+            todo: 'Improve touch typing',
+            completed: false,
+            userId: 178,
+          },
+          {
+            id: 27,
+            todo: 'Learn Express.js',
+            completed: false,
+            userId: 194,
+          },
+          {
+            id: 28,
+            todo: 'Learn calligraphy',
+            completed: false,
+            userId: 80,
+          },
+          {
+            id: 29,
+            todo: 'Have a photo session with some friends',
+            completed: true,
+            userId: 91,
+          },
+          {
+            id: 30,
+            todo: 'Go to the gym',
+            completed: true,
+            userId: 142,
+          },
+        ],
+        total: 254,
+        skip: 0,
+        limit: 30,
+      },
+      { status: 200 },
+    );
+  }),
+  http.get('https://jsonplaceholder.typicode.com/users', ({ request }) => {
+    // return status 200 with a JSON response body
+    return HttpResponse.json(
+      [
         {
-          "id": 1,
-          "todo": "Do something nice for someone you care about",
-          "completed": false,
-          "userId": 152
+          id: 1,
+          name: 'Leanne Graham',
+          username: 'Bret',
+          email: 'Sincere@april.biz',
+          address: {
+            street: 'Kulas Light',
+            suite: 'Apt. 556',
+            city: 'Gwenborough',
+            zipcode: '92998-3874',
+            geo: {
+              lat: '-37.3159',
+              lng: '81.1496',
+            },
+          },
+          phone: '1-770-736-8031 x56442',
+          website: 'hildegard.org',
+          company: {
+            name: 'Romaguera-Crona',
+            catchPhrase: 'Multi-layered client-server neural-net',
+            bs: 'harness real-time e-markets',
+          },
         },
         {
-          "id": 2,
-          "todo": "Memorize a poem",
-          "completed": true,
-          "userId": 13
+          id: 2,
+          name: 'Ervin Howell',
+          username: 'Antonette',
+          email: 'Shanna@melissa.tv',
+          address: {
+            street: 'Victor Plains',
+            suite: 'Suite 879',
+            city: 'Wisokyburgh',
+            zipcode: '90566-7771',
+            geo: {
+              lat: '-43.9509',
+              lng: '-34.4618',
+            },
+          },
+          phone: '010-692-6593 x09125',
+          website: 'anastasia.net',
+          company: {
+            name: 'Deckow-Crist',
+            catchPhrase: 'Proactive didactic contingency',
+            bs: 'synergize scalable supply-chains',
+          },
         },
         {
-          "id": 3,
-          "todo": "Watch a classic movie",
-          "completed": true,
-          "userId": 68
+          id: 3,
+          name: 'Clementine Bauch',
+          username: 'Samantha',
+          email: 'Nathan@yesenia.net',
+          address: {
+            street: 'Douglas Extension',
+            suite: 'Suite 847',
+            city: 'McKenziehaven',
+            zipcode: '59590-4157',
+            geo: {
+              lat: '-68.6102',
+              lng: '-47.0653',
+            },
+          },
+          phone: '1-463-123-4447',
+          website: 'ramiro.info',
+          company: {
+            name: 'Romaguera-Jacobson',
+            catchPhrase: 'Face to face bifurcated interface',
+            bs: 'e-enable strategic applications',
+          },
         },
         {
-          "id": 4,
-          "todo": "Watch a documentary",
-          "completed": false,
-          "userId": 84
+          id: 4,
+          name: 'Patricia Lebsack',
+          username: 'Karianne',
+          email: 'Julianne.OConner@kory.org',
+          address: {
+            street: 'Hoeger Mall',
+            suite: 'Apt. 692',
+            city: 'South Elvis',
+            zipcode: '53919-4257',
+            geo: {
+              lat: '29.4572',
+              lng: '-164.2990',
+            },
+          },
+          phone: '493-170-9623 x156',
+          website: 'kale.biz',
+          company: {
+            name: 'Robel-Corkery',
+            catchPhrase: 'Multi-tiered zero tolerance productivity',
+            bs: 'transition cutting-edge web services',
+          },
         },
         {
-          "id": 5,
-          "todo": "Invest in cryptocurrency",
-          "completed": false,
-          "userId": 163
+          id: 5,
+          name: 'Chelsey Dietrich',
+          username: 'Kamren',
+          email: 'Lucio_Hettinger@annie.ca',
+          address: {
+            street: 'Skiles Walks',
+            suite: 'Suite 351',
+            city: 'Roscoeview',
+            zipcode: '33263',
+            geo: {
+              lat: '-31.8129',
+              lng: '62.5342',
+            },
+          },
+          phone: '(254)954-1289',
+          website: 'demarco.info',
+          company: {
+            name: 'Keebler LLC',
+            catchPhrase: 'User-centric fault-tolerant solution',
+            bs: 'revolutionize end-to-end systems',
+          },
         },
         {
-          "id": 6,
-          "todo": "Contribute code or a monetary donation to an open-source software project",
-          "completed": false,
-          "userId": 69
+          id: 6,
+          name: 'Mrs. Dennis Schulist',
+          username: 'Leopoldo_Corkery',
+          email: 'Karley_Dach@jasper.info',
+          address: {
+            street: 'Norberto Crossing',
+            suite: 'Apt. 950',
+            city: 'South Christy',
+            zipcode: '23505-1337',
+            geo: {
+              lat: '-71.4197',
+              lng: '71.7478',
+            },
+          },
+          phone: '1-477-935-8478 x6430',
+          website: 'ola.org',
+          company: {
+            name: 'Considine-Lockman',
+            catchPhrase: 'Synchronised bottom-line interface',
+            bs: 'e-enable innovative applications',
+          },
         },
         {
-          "id": 7,
-          "todo": "Solve a Rubik's cube",
-          "completed": true,
-          "userId": 76
+          id: 7,
+          name: 'Kurtis Weissnat',
+          username: 'Elwyn.Skiles',
+          email: 'Telly.Hoeger@billy.biz',
+          address: {
+            street: 'Rex Trail',
+            suite: 'Suite 280',
+            city: 'Howemouth',
+            zipcode: '58804-1099',
+            geo: {
+              lat: '24.8918',
+              lng: '21.8984',
+            },
+          },
+          phone: '210.067.6132',
+          website: 'elvis.io',
+          company: {
+            name: 'Johns Group',
+            catchPhrase: 'Configurable multimedia task-force',
+            bs: 'generate enterprise e-tailers',
+          },
         },
         {
-          "id": 8,
-          "todo": "Bake pastries for yourself and neighbor",
-          "completed": true,
-          "userId": 198
+          id: 8,
+          name: 'Nicholas Runolfsdottir V',
+          username: 'Maxime_Nienow',
+          email: 'Sherwood@rosamond.me',
+          address: {
+            street: 'Ellsworth Summit',
+            suite: 'Suite 729',
+            city: 'Aliyaview',
+            zipcode: '45169',
+            geo: {
+              lat: '-14.3990',
+              lng: '-120.7677',
+            },
+          },
+          phone: '586.493.6943 x140',
+          website: 'jacynthe.com',
+          company: {
+            name: 'Abernathy Group',
+            catchPhrase: 'Implemented secondary concept',
+            bs: 'e-enable extensible e-tailers',
+          },
         },
         {
-          "id": 9,
-          "todo": "Go see a Broadway production",
-          "completed": false,
-          "userId": 7
+          id: 9,
+          name: 'Glenna Reichert',
+          username: 'Delphine',
+          email: 'Chaim_McDermott@dana.io',
+          address: {
+            street: 'Dayna Park',
+            suite: 'Suite 449',
+            city: 'Bartholomebury',
+            zipcode: '76495-3109',
+            geo: {
+              lat: '24.6463',
+              lng: '-168.8889',
+            },
+          },
+          phone: '(775)976-6794 x41206',
+          website: 'conrad.com',
+          company: {
+            name: 'Yost and Sons',
+            catchPhrase: 'Switchable contextually-based project',
+            bs: 'aggregate real-time technologies',
+          },
         },
         {
-          "id": 10,
-          "todo": "Write a thank you letter to an influential person in your life",
-          "completed": true,
-          "userId": 9
+          id: 10,
+          name: 'Clementina DuBuque',
+          username: 'Moriah.Stanton',
+          email: 'Rey.Padberg@karina.biz',
+          address: {
+            street: 'Kattie Turnpike',
+            suite: 'Suite 198',
+            city: 'Lebsackbury',
+            zipcode: '31428-2261',
+            geo: {
+              lat: '-38.2386',
+              lng: '57.2232',
+            },
+          },
+          phone: '024-648-3804',
+          website: 'ambrose.net',
+          company: {
+            name: 'Hoeger LLC',
+            catchPhrase: 'Centralized empowering task-force',
+            bs: 'target end-to-end models',
+          },
         },
-        {
-          "id": 11,
-          "todo": "Invite some friends over for a game night",
-          "completed": false,
-          "userId": 104
-        },
-        {
-          "id": 12,
-          "todo": "Have a football scrimmage with some friends",
-          "completed": false,
-          "userId": 32
-        },
-        {
-          "id": 13,
-          "todo": "Text a friend you haven't talked to in a long time",
-          "completed": true,
-          "userId": 2
-        },
-        {
-          "id": 14,
-          "todo": "Organize pantry",
-          "completed": false,
-          "userId": 46
-        },
-        {
-          "id": 15,
-          "todo": "Buy a new house decoration",
-          "completed": true,
-          "userId": 105
-        },
-        {
-          "id": 16,
-          "todo": "Plan a vacation you've always wanted to take",
-          "completed": true,
-          "userId": 162
-        },
-        {
-          "id": 17,
-          "todo": "Clean out car",
-          "completed": false,
-          "userId": 71
-        },
-        {
-          "id": 18,
-          "todo": "Draw and color a Mandala",
-          "completed": true,
-          "userId": 6
-        },
-        {
-          "id": 19,
-          "todo": "Create a cookbook with favorite recipes",
-          "completed": true,
-          "userId": 53
-        },
-        {
-          "id": 20,
-          "todo": "Bake a pie with some friends",
-          "completed": false,
-          "userId": 162
-        },
-        {
-          "id": 21,
-          "todo": "Create a compost pile",
-          "completed": false,
-          "userId": 13
-        },
-        {
-          "id": 22,
-          "todo": "Take a hike at a local park",
-          "completed": true,
-          "userId": 37
-        },
-        {
-          "id": 23,
-          "todo": "Take a class at local community center that interests you",
-          "completed": true,
-          "userId": 65
-        },
-        {
-          "id": 24,
-          "todo": "Research a topic interested in",
-          "completed": true,
-          "userId": 130
-        },
-        {
-          "id": 25,
-          "todo": "Plan a trip to another country",
-          "completed": false,
-          "userId": 140
-        },
-        {
-          "id": 26,
-          "todo": "Improve touch typing",
-          "completed": false,
-          "userId": 178
-        },
-        {
-          "id": 27,
-          "todo": "Learn Express.js",
-          "completed": false,
-          "userId": 194
-        },
-        {
-          "id": 28,
-          "todo": "Learn calligraphy",
-          "completed": false,
-          "userId": 80
-        },
-        {
-          "id": 29,
-          "todo": "Have a photo session with some friends",
-          "completed": true,
-          "userId": 91
-        },
-        {
-          "id": 30,
-          "todo": "Go to the gym",
-          "completed": true,
-          "userId": 142
-        }
       ],
-      "total": 254,
-      "skip": 0,
-      "limit": 30
-    }, { status: 200 });
+      { status: 200 },
+    );
   }),
 ];

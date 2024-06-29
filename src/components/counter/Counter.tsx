@@ -18,9 +18,7 @@ export const Counter = () => {
           setAmount(parseInt(e.target.value));
         }}
       />
-      <button onClick={() => setCount(amount)}>
-        Set
-      </button>
+      <button onClick={() => setCount(amount)}>Set</button>
     </div>
   );
 };

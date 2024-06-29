@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
-import { AppProviders } from "./providers";
+import { AppProviders } from './providers';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -10,4 +10,4 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <App />
     </AppProviders>
   </React.StrictMode>,
-)
+);
