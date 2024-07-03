@@ -1,4 +1,4 @@
-import { logRoles, render, screen } from '@testing-library/react';
+import { act, logRoles, render, screen } from '@testing-library/react';
 import { Skills } from '../../src/components';
 
 describe('Skills', () => {
@@ -45,7 +45,7 @@ describe('Skills', () => {
     render(<Skills title={title} skills={skills} />);
     const loginButton = screen.queryByRole('button', { name: /login/i });
     if (!loginButton) return;
-    await loginButton.click();
+    act(() => loginButton.click());
     const logoutButton = screen.getByRole('button', { name: /logout/i });
     expect(logoutButton).toBeInTheDocument();
     const loginButtonPostClick = screen.queryByRole('button', {
@@ -66,5 +66,6 @@ describe('Skills', () => {
     );
     // screen.debug();
     expect(logoutButton).toBeInTheDocument();
+    expect(logoutButton).toMatchSnapshot();
   });
 });

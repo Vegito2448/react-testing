@@ -8,15 +8,7 @@ describe('CounterTwo', () => {
   const handleIncrement = vi.fn(); // mock function to simulate increment vi may be jest.fn()
   const handleDecrement = vi.fn(); // mock function to simulate decrement vi may be jest.fn()
 
-  test('should render', () => {
-    render(<CounterTwo count={count} />);
-    const textElement = screen.getByText(/Counter Two/i);
-    expect(textElement).toBeInTheDocument();
-  });
-
-  test('handlers should be called', async () => {
-    userEvent.setup();
-
+  beforeEach(() => {
     render(
       <CounterTwo
         count={count}
@@ -24,7 +16,15 @@ describe('CounterTwo', () => {
         handleDecrement={handleDecrement}
       />,
     );
+    userEvent.setup();
+  });
 
+  test('should render', () => {
+    const textElement = screen.getByText(/Counter Two/i);
+    expect(textElement).toBeInTheDocument();
+  });
+
+  test('handlers should be called', async () => {
     const incrementButton = screen.getByRole('button', { name: /Increment/i });
     const decrementButton = screen.getByRole('button', { name: /Decrement/i });
 

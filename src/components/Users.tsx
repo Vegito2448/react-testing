@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { User } from '../interfaces';
+import { GifUser } from '../interfaces';
 
 export const Users = () => {
   const [users, setUsers] = useState<string[]>([]);
@@ -7,7 +7,7 @@ export const Users = () => {
 
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/users')
-      .then((res): Promise<User[]> => res.json())
+      .then((res): Promise<GifUser[]> => res.json())
       .then((data) => setUsers(data.map((user) => user.name)))
       .catch(() => setError('Error fetching users'));
   }, []);

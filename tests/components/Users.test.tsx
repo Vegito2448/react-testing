@@ -4,15 +4,16 @@ import { render, screen } from '../../src/utils';
 import { server } from '../mocks';
 
 describe('Users', () => {
-  test('should render', async () => {
+  beforeEach(() => {
     render(<Users />);
+  });
+
+  test('should render', async () => {
     const textElement = await screen.getByText(/Users/i);
     expect(textElement).toBeInTheDocument();
   });
 
   test('render a list of users', async () => {
-    render(<Users />);
-
     const users = await screen.findAllByRole('listitem');
     expect(users.length).toBeGreaterThan(3);
     expect(users).toHaveLength(10);
@@ -25,7 +26,6 @@ describe('Users', () => {
       ),
     );
 
-    render(<Users />);
     const errorMessage = await screen.findByText(/Error fetching users/i);
     expect(errorMessage).toBeInTheDocument();
   });
